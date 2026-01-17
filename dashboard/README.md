@@ -44,4 +44,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
+<img width="1883" height="875" alt="React App - Google Chrome 17-01-2026 07_45_42 PM" src="https://github.com/user-attachments/assets/bf3b6b1b-6f5e-46e4-9a8f-c746e3ff00d0" />
+
 
