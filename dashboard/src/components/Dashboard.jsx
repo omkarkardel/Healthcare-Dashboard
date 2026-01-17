@@ -1,11 +1,21 @@
-import React from 'react'
+import BodyParts from "./BodyParts";
+import Activity from "./Activity";
+// import humanImg from "../assets/human.jpeg";
 
-const Dashboard = () => {
+export default function Dashboard() {
   return (
-    <div>
-      
+    <div className="p-6">
+      <h1 className="text-xl font-semibold mb-6">Dashboard</h1>
+      <div className="space-y-6">
+        <BodyParts />
+        <Activity />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Dashboard
+
+
+
+
+

@@ -5,6 +5,8 @@ import {
   FiUsers,
   FiBarChart2,
   FiSettings,
+  FiMessageSquare,
+  FiHeadphones,
   FiMoreHorizontal,
 } from "react-icons/fi";
 
@@ -25,12 +27,11 @@ export default function Sidebar() {
           General
         </p>
 
-        <SidebarItem icon={<FiHome />} text="Dashboard" />
-        <SidebarItem icon={<FiClock />} text="History" active />
+        <SidebarItem icon={<FiHome />} text="Dashboard" active />
+        <SidebarItem icon={<FiClock />} text="History" />
         <SidebarItem icon={<FiCalendar />} text="Calendar" />
         <SidebarItem icon={<FiUsers />} text="Appointments" />
         <SidebarItem icon={<FiBarChart2 />} text="Statistics" />
-        <SidebarItem icon={<FiSettings />} text="Settings" />
 
       </div>
 
@@ -40,9 +41,10 @@ export default function Sidebar() {
           Tools
         </p>
 
-        <TeamItem letter="C" name="Chat" />
-        <TeamItem letter="S" name="Support" />
-        <TeamItem letter="S" name="Settings" />
+        <TeamItem icon={<FiMessageSquare />} text="Chat" />
+        <TeamItem icon={<FiHeadphones />} text="Support" />
+        <TeamItem icon={<FiSettings />} text="Settings" />
+
       </div>
 
     </aside>
@@ -67,13 +69,15 @@ function SidebarItem({ icon, text, active }) {
   );
 }
 
-function TeamItem({ letter, name }) {
+function TeamItem({ icon, text, active }) {
   return (
-    <div className="flex items-center gap-3 px-3 py-2 rounded-md cursor-pointer hover:bg-gray-100">
-      <div className="h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center text-xs font-semibold text-gray-700">
-        {letter}
-      </div>
-      <span className="text-sm">{name}</span>
+    <div
+      className={`flex items-center gap-3 px-3 py-2 rounded-md cursor-pointer
+        ${active ? "bg-gray-100 text-blue-600" : "hover:bg-gray-100"}`}
+    >
+      <span className="text-lg text-gray-500">{icon}</span>
+      <span className="text-sm font-medium">{text}</span>
     </div>
   );
 }
+

@@ -1,4 +1,24 @@
 
+## Healthcare Dashboard
+
+Quick start on Windows:
+
+1. Install dependencies
+
+```
+npm install
+```
+
+2. Start the dev server
+
+```
+npm start
+```
+
+If port 3000 is busy, the app will offer another port automatically.
+
+---
+
 ## Available Scripts
 
 In the project directory, you can run:

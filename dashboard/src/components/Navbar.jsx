@@ -6,9 +6,11 @@ const Navbar = () => {
     <nav className="w-full h-16 px-6 flex items-center justify-between border-b bg-white">
       
       {/* Left - Name */}
-      <div className="text-xl font-semibold">
-        <span>Health</span>care.
-      </div>
+       <div className="text-2xl font-bold tracking-tight">
+         <span className="text-blue-600">Health</span>
+         <span className="text-gray-800">care</span>
+         <span className="text-blue-600">.</span>
+       </div>
 
       {/* Middle - Search with Notification */}
       <div className="relative w-1/3">
@@ -33,4 +35,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;
