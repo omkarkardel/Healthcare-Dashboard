@@ -27,7 +27,7 @@ const Calendar = () => {
       </div>
 
       {/* Calendar Grid */}
-      <div className="grid grid-cols-7 gap-3 text-center text-sm">
+      <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-7 gap-3 text-center text-sm">
         {calendarData.map((item) => (
           <div key={item.day} className="space-y-2">
             

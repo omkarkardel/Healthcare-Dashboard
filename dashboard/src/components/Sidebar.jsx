@@ -9,11 +9,26 @@ import {
   FiHeadphones,
   FiMoreHorizontal,
 } from "react-icons/fi";
+import React from "react";
 
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, onClose }) {
   return (
-    <aside className="h-full w-64 flex flex-col bg-white text-gray-700 px-4 py-6 border-r">
+    <>
+      {/* Overlay for mobile */}
+      {isOpen ? (
+        <div
+          className="fixed inset-0 bg-black/30 backdrop-blur-[1px] z-30 lg:hidden"
+          onClick={onClose}
+        />
+      ) : null}
+
+      <aside
+        className={
+          "fixed lg:static z-40 h-full w-64 flex flex-col bg-white text-gray-700 px-4 py-6 border-r transition-transform duration-200 " +
+          (isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0")
+        }
+      >
 
       {/* Top */}
       <div className="flex items-center justify-between mb-8">
@@ -47,7 +62,8 @@ export default function Sidebar() {
 
       </div>
 
-    </aside>
+      </aside>
+    </>
   );
 }
 

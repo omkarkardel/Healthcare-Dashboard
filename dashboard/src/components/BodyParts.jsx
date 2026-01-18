@@ -19,13 +19,13 @@ function HealthCard({ icon, title, date, progress, colorClass }) {
 
 const BodyParts = () => {
   return (
-     <div className="bg-white rounded-xl p-6 shadow-sm">
+     <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm">
       <h2 className="font-semibold text-gray-800 mb-4">Body Health</h2>
-      <div className="flex gap-6 items-center h-[420px]">
-        <div className="w-[320px] h-full relative flex justify-center items-center">
+      <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-center lg:items-stretch">
+        <div className="w-full lg:w-[320px] h-64 sm:h-80 lg:h-[420px] relative flex justify-center items-center">
           <img src={humanImg} alt="Human Body" className="h-full w-auto object-contain" />
         </div>
-        <div className="w-[360px] h-full grid grid-rows-3 gap-3">
+        <div className="w-full lg:w-[360px] grid grid-rows-3 gap-3">
           <HealthCard icon={<GiLungs />} title="Lungs" date="26 Oct 2021" progress={25} colorClass="bg-rose-400" />
           <HealthCard icon={<GiTooth />} title="Teeth" date="26 Oct 2021" progress={80} colorClass="bg-emerald-500" />
           <HealthCard icon={<GiBoneKnife />} title="Bone" date="26 Oct 2021" progress={40} colorClass="bg-orange-400" />

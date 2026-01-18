@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 // import BodyParts from "./components/BodyParts";
@@ -9,29 +10,31 @@ import Schedule from "./components/Schedule";
 import Dashboard from "./components/Dashboard";
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
     <>
       {/* Top Navbar */}
-      <Navbar/>
+      <Navbar onMenuClick={() => setSidebarOpen(true)} />
 
       <div className="flex bg-gray-50 min-h-screen">
         {/* Sidebar */}
-        <Sidebar />
+        <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
         {/* Main Content */}
-        <main className="flex-1 p-6">
-          <div className="grid grid-cols-12 gap-6">
+        <main className="flex-1 p-4 sm:p-6">
+          <div className="grid gap-6 grid-cols-1 lg:grid-cols-12">
             {/* LEFT COLUMN */}
-            <div className="col-span-5 space-y-6 border-r border-gray-200 pr-6">
-              <Dashboard/>
+            <div className="space-y-6 lg:col-span-5 lg:border-r lg:border-gray-200 lg:pr-6">
+              <Dashboard />
             </div>
 
             {/* RIGHT COLUMN */}
-            <div className="col-span-7">
+            <div className="lg:col-span-7">
               <div className="w-full space-y-6">
                 <Calendar />
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
                   <Dentists />
                   <Physiotherapy />
                 </div>

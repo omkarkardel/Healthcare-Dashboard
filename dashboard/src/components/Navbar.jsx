@@ -1,19 +1,28 @@
 import React from 'react'
-import { Bell, User, Plus } from "lucide-react";
+import { Bell, User, Plus, Menu } from "lucide-react";
 
-const Navbar = () => {
+const Navbar = ({ onMenuClick }) => {
   return (
-    <nav className="w-full h-16 px-6 flex items-center justify-between border-b bg-white">
+    <nav className="w-full h-16 px-4 sm:px-6 flex items-center justify-between border-b bg-white">
       
       {/* Left - Name */}
-       <div className="text-2xl font-bold tracking-tight">
+       <div className="flex items-center gap-3">
+         <button
+           className="inline-flex lg:hidden p-2 rounded-md border hover:bg-gray-50"
+           aria-label="Open menu"
+           onClick={onMenuClick}
+         >
+           <Menu size={20} />
+         </button>
+         <div className="text-2xl font-bold tracking-tight">
          <span className="text-blue-600">Health</span>
          <span className="text-gray-800">care</span>
          <span className="text-blue-600">.</span>
+         </div>
        </div>
 
       {/* Middle - Search with Notification */}
-      <div className="relative w-1/3">
+      <div className="relative hidden sm:block w-1/2 lg:w-1/3">
         <input
           type="text"
           placeholder="Search..."
@@ -23,9 +32,9 @@ const Navbar = () => {
       </div>
 
       {/* Right - User Icon & Add Button */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 sm:gap-4">
         <User className="text-gray-600 cursor-pointer" size={24} />
-        <button className="flex items-center gap-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+        <button className="hidden sm:flex items-center gap-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
           <Plus size={18} />
           Add
         </button>

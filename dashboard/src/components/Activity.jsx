@@ -21,7 +21,7 @@ const barColors = ['bg-indigo-500', 'bg-cyan-400', 'bg-violet-500'];
         <span className="text-sm text-gray-500">3 appointments this week</span>
       </div>
 
-      <div className="grid grid-cols-7 gap-4 items-end">
+      <div className="grid grid-cols-4 sm:grid-cols-7 gap-4 items-end">
         {days.map((day) => (
           <div key={day.label} className="flex flex-col items-center">
             <div className="flex items-end gap-1 h-28">

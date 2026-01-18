@@ -21,14 +21,14 @@ const Schedule = () => {
 
       {/* Thursday */}
       <p className="text-xs text-gray-500 mb-2">On Thursday</p>
-      <div className="grid grid-cols-2 gap-3 mb-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
         <AppointmentCard title="Health checkup complete" time="11:00 AM" icon="🖊️" />
         <AppointmentCard title="Ophthalmologist" time="14:00 PM" icon="🧿" />
       </div>
 
       {/* Saturday */}
       <p className="text-xs text-gray-500 mb-2">On Saturday</p>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <AppointmentCard title="Cardiologist" time="12:00 AM" icon="❤️" />
         <AppointmentCard title="Neurologist" time="16:00 PM" icon="🧠" />
       </div>
